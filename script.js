@@ -29,8 +29,12 @@ const songs = [
   "14 Bottom Of The River",
 ];
 
+// random starting song number
+const randomNumber = Math.floor(Math.random() * songs.length) + 1;
+console.log(randomNumber);
+
 // Keep track of song
-let songIndex = 0;
+let songIndex = randomNumber;
 
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
@@ -97,7 +101,7 @@ function setProgress(e) {
   const clickX = e.offsetX;
   const duration = audio.duration;
 
-  audio.currentTime = (clickX / width ) * duration
+  audio.currentTime = (clickX / width) * duration;
 }
 
 // Event listeners
@@ -122,4 +126,4 @@ audio.addEventListener("timeupdate", updateProgress);
 progressContainer.addEventListener("click", setProgress);
 
 // Song Ends
-audio.addEventListener('ended', nextSong);
+audio.addEventListener("ended", nextSong);
