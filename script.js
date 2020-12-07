@@ -27,13 +27,22 @@ const songs = [
   "12 No Dry Eye In The Chapel",
   "13 Morning Comes",
   "14 Bottom Of The River",
+  "01 Burning In Carolina",
+  "02 Take Me There",
+  "03 Any Better Than This",
+  "04 Stronger Than A Lion",
+  "05 No One Will Miss Me",
+  "06 Back To The Garden",
+  "07 Only In America",
+  "08 From One Woman To Another",
+  "09 If I'd Known I Loved Her",
+  "10 Danced Right Out Of My Arms",
+  "11 Soft Place To Land",
+  "12 The Wrong Ocean",
 ];
 
-// Album Covers 
-const albumCovers = [
-    'thefirstdecade',
-    'thelight'
-];
+// Album Covers
+const albumCovers = ["thefirstdecade", "thelight"];
 
 // random starting song number
 const randomNumber = Math.floor(Math.random() * songs.length) + 1;
@@ -48,8 +57,29 @@ loadSong(songs[songIndex]);
 // Update song details
 function loadSong(song) {
   title.innerText = song;
+  let albumCover = "";
+//   console.log(song);
   audio.src = `music/${song}.mp3`;
-  cover.src = `images/thefirstdecade.jpg`;
+  if (
+    song == "01 Burning In Carolina" ||
+    song == "02 Take Me There" ||
+    song == "03 Any Better Than This" ||
+    song == "04 Stronger Than A Lion" ||
+    song == "05 No One Will Miss Me" ||
+    song == "06 Back To The Garden" ||
+    song == "07 Only In America" ||
+    song == "08 From One Woman To Another" ||
+    song == "09 If I'd Known I Loved Her" ||
+    song == "10 Danced Right Out Of My Arms" ||
+    song == "11 Soft Place To Land" ||
+    song == "12 The Wrong Ocean"
+  ) {
+    albumCover = "thelight";
+  } else {
+    albumCover = "thefirstdecade";
+  }
+//   console.log(albumCover);
+  cover.src = `images/${albumCover}.jpg`;
 }
 
 // Play song
