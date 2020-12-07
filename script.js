@@ -29,6 +29,12 @@ const songs = [
   "14 Bottom Of The River",
 ];
 
+// Album Covers 
+const albumCovers = [
+    'thefirstdecade',
+    'thelight'
+];
+
 // random starting song number
 const randomNumber = Math.floor(Math.random() * songs.length) + 1;
 console.log(randomNumber);
