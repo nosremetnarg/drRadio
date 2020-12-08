@@ -3,6 +3,7 @@ const musicContainer = document.getElementById("music-container");
 const playBtn = document.getElementById("play");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
+const shuffleBtn = document.getElementById("shuffle");
 
 const audio = document.getElementById("audio");
 const progress = document.getElementById("progress");
@@ -71,7 +72,7 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
   title.innerText = song;
   let albumCover = "";
-    console.log(song);
+  console.log(song);
   audio.src = `music/${song}.mp3`;
   if (
     song == "01 Burning In Carolina" ||
@@ -101,8 +102,7 @@ function loadSong(song) {
     song == "10 I Will Never Die" ||
     song == "11 The Meaning Of It All" ||
     song == "12 My Whole Life Long" ||
-    song == "13 After It All" 
-
+    song == "13 After It All"
   ) {
     albumCover = "afteritall";
   } else {
@@ -154,6 +154,20 @@ function nextSong() {
   playSong();
 }
 
+// Shuffle song
+function shuffleSong() {
+  let randomNumber = Math.floor(Math.random() * songs.length) + 1;
+
+  songIndex = randomNumber;
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+
+  loadSong(songs[songIndex]);
+  playSong();
+}
+
 // Update progress bar
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
@@ -184,6 +198,7 @@ playBtn.addEventListener("click", () => {
 // Change song
 prevBtn.addEventListener("click", prevSong);
 nextBtn.addEventListener("click", nextSong);
+shuffleBtn.addEventListener("click", shuffleSong);
 
 // Time/song update
 audio.addEventListener("timeupdate", updateProgress);
