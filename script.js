@@ -39,6 +39,19 @@ const songs = [
   "10 Danced Right Out Of My Arms",
   "11 Soft Place To Land",
   "12 The Wrong Ocean",
+  "01 Anthem",
+  "02 Run",
+  "03 Outlaws",
+  "04 The Dream",
+  "05 Scared",
+  "06 Chasing Twisters",
+  "07 Bethlehem Steel",
+  "08 You're the One For Me",
+  "09 Cold Day In Heaven",
+  "10 I Will Never Die",
+  "11 The Meaning Of It All",
+  "12 My Whole Life Long",
+  "13 After It All",
 ];
 
 // Album Covers
@@ -58,7 +71,7 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
   title.innerText = song;
   let albumCover = "";
-//   console.log(song);
+  //   console.log(song);
   audio.src = `music/${song}.mp3`;
   if (
     song == "01 Burning In Carolina" ||
@@ -75,10 +88,26 @@ function loadSong(song) {
     song == "12 The Wrong Ocean"
   ) {
     albumCover = "thelight";
+  } else if (
+    song == "01 Anthem" ||
+    song == "02 Run" ||
+    song == "03 Outlaws" ||
+    song == "04 The Dream" ||
+    song == "05 Scared" ||
+    song == "06 Chasing Twisters" ||
+    song == "07 Bethlehem Steel" ||
+    song == "08 You're the One For Me" ||
+    song == "09 Cold Day In Heaven" ||
+    song == "10 I Will Never Die" ||
+    song == "11 The Meaning Of It All" ||
+    song == "12 My Whole Life Long" ||
+    song == "13 After It All"
+  ) {
+    albumCover = "afteritall";
   } else {
     albumCover = "thefirstdecade";
   }
-//   console.log(albumCover);
+  //   console.log(albumCover);
   cover.src = `images/${albumCover}.jpg`;
 }
 
