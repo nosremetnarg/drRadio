@@ -71,7 +71,7 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
   title.innerText = song;
   let albumCover = "";
-  //   console.log(song);
+    console.log(song);
   audio.src = `music/${song}.mp3`;
   if (
     song == "01 Burning In Carolina" ||
@@ -101,7 +101,8 @@ function loadSong(song) {
     song == "10 I Will Never Die" ||
     song == "11 The Meaning Of It All" ||
     song == "12 My Whole Life Long" ||
-    song == "13 After It All"
+    song == "13 After It All" 
+
   ) {
     albumCover = "afteritall";
   } else {

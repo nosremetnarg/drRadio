@@ -1,4 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("//db.onlinewebfonts.com/c/ae5af7ed292187888511abe838ae91dd?family=VirginiaMediumW00-Regular");
+@font-face {
+  font-family: "VirginiaMediumW00-Regular";
+  src: url("//db.onlinewebfonts.com/t/ae5af7ed292187888511abe838ae91dd.eot");
+  src: url("//db.onlinewebfonts.com/t/ae5af7ed292187888511abe838ae91dd.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/ae5af7ed292187888511abe838ae91dd.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/ae5af7ed292187888511abe838ae91dd.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/ae5af7ed292187888511abe838ae91dd.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/ae5af7ed292187888511abe838ae91dd.svg#VirginiaMediumW00-Regular")
+      format("svg");
+}
 
 * {
   box-sizing: border-box;
@@ -17,6 +32,10 @@ body {
   justify-content: center;
   font-family: "Lato", sans-serif;
   margin: 0;
+}
+
+.titleText {
+  font-family: "VirginiaMediumW00-Regular";
 }
 
 .music-container {
@@ -101,41 +120,41 @@ body {
 }
 
 .music-info {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 15px 15px 0 0;
-    position: absolute;
-    top: 0;
-    left: 20px;
-    width: calc(100% - 40px);
-    padding: 10px 10px 10px 150px;
-    opacity: 0;
-    transform: translateY(0%);
-    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
-    z-index: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
 }
 
 .music-container.play .music-info {
-    opacity: 1;
-    transform: translateY(-100%)
+  opacity: 1;
+  transform: translateY(-100%);
 }
 
 .music-info h4 {
-    margin: 0;
+  margin: 0;
 }
 
 .progress-container {
-    background: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px 0;
-    height: 4px;
-    width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
 }
 
 .progress {
-    background-color: #fe8dea;
-    border-radius: 5px;
-    height: 100%;
-    width: 0%;
-    transition: width 0.1 linear
+  background-color: #fe8dea;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1 linear;
 }
